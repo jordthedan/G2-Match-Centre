@@ -12,12 +12,7 @@ from pathlib import Path
 
 UTC = timezone.utc
 OUT = Path("g2-calendar.ics")
-UA = "G2MatchCentre/2.1 (+https://github.com/jordthedan/G2-Match-Centre)"
-
-# esports-ics reads Liquipedia through the MediaWiki API. The generic Matches pages
-# have a deliberately short horizon, so each game also includes the currently active
-# event page. This gives us the longer schedules Liquipedia already publishes while
-# still keeping Liquipedia as the fixture source and avoiding HTML scraping.
+UA = "G2MatchCentre/2.2 (+https://github.com/jordthedan/G2-Match-Centre)"
 ADAPTER = "https://ics.snwfdhmp.com/matches.ics"
 SOURCES = {
     "Valorant": [
@@ -28,13 +23,9 @@ SOURCES = {
         "https://liquipedia.net/counterstrike/Liquipedia:Matches",
         "https://liquipedia.net/counterstrike/FISSURE/Playground/3",
     ],
-    "Rainbow Six": [
+    "R6S": [
         "https://liquipedia.net/rainbowsix/Liquipedia:Matches",
         "https://liquipedia.net/rainbowsix/Europe_MENA_League/2026/Stage_2",
-    ],
-    "League of Legends": [
-        "https://liquipedia.net/leagueoflegends/Liquipedia:Matches",
-        "https://liquipedia.net/leagueoflegends/LEC/2026/Summer",
     ],
 }
 
@@ -196,7 +187,7 @@ def render(matches: list[Match]) -> str:
     ]
     for m in sorted(matches, key=lambda x: x.start):
         start = m.start.astimezone(UTC)
-        duration = 2 if m.game in {"Rainbow Six", "League of Legends"} else 3
+        duration = 2 if m.game == "R6S" else 3
         end = start + timedelta(hours=duration)
         title = f"G2 vs {m.opponent} — {m.game}"
         desc = m.competition
