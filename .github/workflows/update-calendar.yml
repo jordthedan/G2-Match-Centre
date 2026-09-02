@@ -1,0 +1,47 @@
+name: Update G2 calendar
+
+on:
+  schedule:
+    - cron: '27 * * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/update_calendar.py'
+      - '.github/workflows/update-calendar.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: g2-calendar-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate calendar
+        run: python scripts/update_calendar.py
+
+      - name: Commit changed calendar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add g2-calendar.ics
+          if git diff --cached --quiet; then
+            echo "No fixture changes."
+            exit 0
+          fi
+          git commit -m "Update G2 calendar"
+          git pull --rebase origin main
+          git push origin HEAD:main
