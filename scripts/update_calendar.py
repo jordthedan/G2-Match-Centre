@@ -12,17 +12,30 @@ from pathlib import Path
 
 UTC = timezone.utc
 OUT = Path("g2-calendar.ics")
-UA = "G2MatchCentre/2.0 (+https://github.com/jordthedan/G2-Match-Centre)"
+UA = "G2MatchCentre/2.1 (+https://github.com/jordthedan/G2-Match-Centre)"
 
-# esports-ics is an open-source calendar adapter whose match source is Liquipedia.
-# Using its ICS endpoint avoids scraping Liquipedia HTML and keeps this project within
-# Liquipedia's API/automation rules while retaining Liquipedia as the fixture source.
+# esports-ics reads Liquipedia through the MediaWiki API. The generic Matches pages
+# have a deliberately short horizon, so each game also includes the currently active
+# event page. This gives us the longer schedules Liquipedia already publishes while
+# still keeping Liquipedia as the fixture source and avoiding HTML scraping.
 ADAPTER = "https://ics.snwfdhmp.com/matches.ics"
 SOURCES = {
-    "Valorant": "https://liquipedia.net/valorant/Liquipedia:Matches",
-    "CS2": "https://liquipedia.net/counterstrike/Liquipedia:Matches",
-    "Rainbow Six": "https://liquipedia.net/rainbowsix/Liquipedia:Matches",
-    "League of Legends": "https://liquipedia.net/leagueoflegends/Liquipedia:Matches",
+    "Valorant": [
+        "https://liquipedia.net/valorant/Liquipedia:Matches",
+        "https://liquipedia.net/valorant/VCT/2026/Americas_League/Stage_2",
+    ],
+    "CS2": [
+        "https://liquipedia.net/counterstrike/Liquipedia:Matches",
+        "https://liquipedia.net/counterstrike/FISSURE/Playground/3",
+    ],
+    "Rainbow Six": [
+        "https://liquipedia.net/rainbowsix/Liquipedia:Matches",
+        "https://liquipedia.net/rainbowsix/Europe_MENA_League/2026/Stage_2",
+    ],
+    "League of Legends": [
+        "https://liquipedia.net/leagueoflegends/Liquipedia:Matches",
+        "https://liquipedia.net/leagueoflegends/LEC/2026/Summer",
+    ],
 }
 
 @dataclass(frozen=True)
@@ -37,7 +50,7 @@ class Match:
 
 def fetch(url: str) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Encoding": "gzip"})
-    with urllib.request.urlopen(req, timeout=45) as r:
+    with urllib.request.urlopen(req, timeout=60) as r:
         data = r.read()
         if r.headers.get("Content-Encoding", "").lower() == "gzip":
             import gzip
@@ -84,7 +97,6 @@ def opponent_from_fields(summary: str, left: str, right: str) -> str:
     for team in (left, right):
         if team and not re.search(r"^G2(?: Esports)?$", team.strip(), re.I):
             return team.strip()
-    # Fallback for normal summaries such as "G2 vs LOUD - competition".
     m = re.search(r"(?:^|\b)G2(?: Esports)?\s+(?:vs\.?|v)\s+([^—|\-]+)", summary, re.I)
     if m:
         return m.group(1).strip()
@@ -99,15 +111,15 @@ def is_main_g2(left: str, right: str, summary: str) -> bool:
     return bool(re.search(r"\bG2(?: Esports)?\b", hay, re.I))
 
 
-def fetch_game(game: str, lp_url: str) -> list[Match]:
+def fetch_page(game: str, lp_url: str) -> list[Match]:
     query = urllib.parse.urlencode({
         "url": lp_url,
         "teams_regex": "^G2$|^G2 Esports$",
         "teams_regex_use_fullnames": "true",
+        "ignore_tbd": "false",
         "past_match_allow_seconds": "21600",
     })
-    adapter_url = f"{ADAPTER}?{query}"
-    text = fetch(adapter_url)
+    text = fetch(f"{ADAPTER}?{query}")
     lines = unfold_ics(text)
     events: list[list[str]] = []
     current: list[str] | None = None
@@ -115,7 +127,8 @@ def fetch_game(game: str, lp_url: str) -> list[Match]:
         if line == "BEGIN:VEVENT":
             current = []
         elif line == "END:VEVENT" and current is not None:
-            events.append(current); current = None
+            events.append(current)
+            current = None
         elif current is not None:
             current.append(line)
 
@@ -129,12 +142,29 @@ def fetch_game(game: str, lp_url: str) -> list[Match]:
         start = parse_dt(prop(e, "DTSTART"))
         if not start or start < datetime.now(UTC) - timedelta(hours=8):
             continue
-        opponent = opponent_from_fields(summary, left, right)
-        competition = prop(e, "X-LIQUIPEDIATOICAL-COMPETITION")
-        uid = prop(e, "UID")
-        # Link to the Liquipedia match source rather than exposing results/scores.
-        out.append(Match(game, opponent, start, competition, lp_url, uid))
+        out.append(Match(
+            game=game,
+            opponent=opponent_from_fields(summary, left, right),
+            start=start,
+            competition=prop(e, "X-LIQUIPEDIATOICAL-COMPETITION"),
+            url=lp_url,
+            source_id=prop(e, "UID"),
+        ))
     return dedupe(out)
+
+
+def fetch_game(game: str, urls: list[str]) -> tuple[list[Match], list[str]]:
+    out: list[Match] = []
+    failed: list[str] = []
+    for lp_url in urls:
+        try:
+            got = fetch_page(game, lp_url)
+            print(f"{game}: {len(got)} matches from {lp_url}")
+            out.extend(got)
+        except Exception as exc:
+            failed.append(lp_url)
+            print(f"WARNING {game} source {lp_url}: {exc}")
+    return dedupe(out), failed
 
 
 def dedupe(items: list[Match]) -> list[Match]:
@@ -142,7 +172,8 @@ def dedupe(items: list[Match]) -> list[Match]:
     for m in sorted(items, key=lambda x: x.start):
         key = (m.game, m.start.replace(second=0, microsecond=0), m.opponent.lower())
         if key not in seen:
-            seen.add(key); out.append(m)
+            seen.add(key)
+            out.append(m)
     return out
 
 
@@ -151,8 +182,6 @@ def esc(s: str) -> str:
 
 
 def uid(m: Match) -> str:
-    # Prefer upstream stable UID. Fallback deliberately excludes opponent so TBD -> named
-    # opponent updates the existing event rather than creating a duplicate.
     seed = m.source_id or f"{m.game}|{m.competition}|{m.start.isoformat()}"
     return hashlib.sha1(seed.encode()).hexdigest() + "@g2-calendar"
 
@@ -171,7 +200,8 @@ def render(matches: list[Match]) -> str:
         end = start + timedelta(hours=duration)
         title = f"G2 vs {m.opponent} — {m.game}"
         desc = m.competition
-        if m.url: desc += ("\n" if desc else "") + "Source: " + m.url
+        if m.url:
+            desc += ("\n" if desc else "") + "Source: " + m.url
         lines += [
             "BEGIN:VEVENT", f"UID:{uid(m)}", f"DTSTART:{start:%Y%m%dT%H%M%SZ}",
             f"DTEND:{end:%Y%m%dT%H%M%SZ}", f"SUMMARY:{esc(title)}",
@@ -186,21 +216,20 @@ def render(matches: list[Match]) -> str:
 def main() -> None:
     all_matches: list[Match] = []
     failures: list[str] = []
-    for game, lp_url in SOURCES.items():
-        try:
-            got = fetch_game(game, lp_url)
-            print(f"{game}: {len(got)} future matches from Liquipedia")
-            all_matches.extend(got)
-        except Exception as exc:
-            failures.append(game)
-            print(f"WARNING {game}: {exc}")
+    for game, urls in SOURCES.items():
+        got, failed = fetch_game(game, urls)
+        print(f"{game}: {len(got)} unique future matches from Liquipedia")
+        all_matches.extend(got)
+        failures.extend(failed)
+
     all_matches = dedupe(all_matches)
     if not all_matches:
         raise SystemExit("No upcoming G2 matches found; refusing to overwrite calendar.")
+
     OUT.write_text(render(all_matches), encoding="utf-8", newline="")
     print(f"Wrote {len(all_matches)} upcoming matches to {OUT}")
     if failures:
-        print("Sources with temporary failures: " + ", ".join(failures))
+        print("Temporary source failures: " + ", ".join(failures))
 
 if __name__ == "__main__":
     main()
