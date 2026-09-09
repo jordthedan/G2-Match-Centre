@@ -12,20 +12,23 @@ from pathlib import Path
 
 UTC = timezone.utc
 OUT = Path("g2-calendar.ics")
-UA = "G2MatchCentre/2.2 (+https://github.com/jordthedan/G2-Match-Centre)"
+UA = "G2MatchCentre/2.3 (+https://github.com/jordthedan/G2-Match-Centre)"
 ADAPTER = "https://ics.snwfdhmp.com/matches.ics"
 SOURCES = {
     "Valorant": [
         "https://liquipedia.net/valorant/Liquipedia:Matches",
-        "https://liquipedia.net/valorant/VCT/2026/Americas_League/Stage_2",
+        "https://liquipedia.net/valorant/VCT/2026/Champions",
+        "https://liquipedia.net/valorant/G2_Esports",
     ],
     "CS2": [
         "https://liquipedia.net/counterstrike/Liquipedia:Matches",
-        "https://liquipedia.net/counterstrike/FISSURE/Playground/3",
+        "https://liquipedia.net/counterstrike/G2_Esports",
     ],
     "R6S": [
         "https://liquipedia.net/rainbowsix/Liquipedia:Matches",
         "https://liquipedia.net/rainbowsix/Europe_MENA_League/2026/Stage_2",
+        "https://liquipedia.net/rainbowsix/Europe_MENA_League/2026/Stage_2/Group_Stage",
+        "https://liquipedia.net/rainbowsix/Alem4o",
     ],
 }
 
@@ -108,7 +111,7 @@ def fetch_page(game: str, lp_url: str) -> list[Match]:
         "teams_regex": "^G2$|^G2 Esports$",
         "teams_regex_use_fullnames": "true",
         "ignore_tbd": "false",
-        "past_match_allow_seconds": "21600",
+        "past_match_allow_seconds": "3600",
     })
     text = fetch(f"{ADAPTER}?{query}")
     lines = unfold_ics(text)
@@ -131,7 +134,7 @@ def fetch_page(game: str, lp_url: str) -> list[Match]:
         if not is_main_g2(left, right, summary):
             continue
         start = parse_dt(prop(e, "DTSTART"))
-        if not start or start < datetime.now(UTC) - timedelta(hours=8):
+        if not start or start < datetime.now(UTC) - timedelta(hours=1):
             continue
         out.append(Match(
             game=game,
