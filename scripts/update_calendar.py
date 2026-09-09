@@ -12,7 +12,7 @@ from pathlib import Path
 
 UTC = timezone.utc
 OUT = Path("g2-calendar.ics")
-UA = "G2MatchCentre/2.3 (+https://github.com/jordthedan/G2-Match-Centre)"
+UA = "G2MatchCentre/2.4 (+https://github.com/jordthedan/G2-Match-Centre)"
 ADAPTER = "https://ics.snwfdhmp.com/matches.ics"
 SOURCES = {
     "Valorant": [
@@ -106,10 +106,10 @@ def is_main_g2(left: str, right: str, summary: str) -> bool:
 
 
 def fetch_page(game: str, lp_url: str) -> list[Match]:
+    # Fetch the page broadly and filter G2 locally. Adapter-side team filtering can
+    # silently return an empty ICS feed when Liquipedia team-name metadata changes.
     query = urllib.parse.urlencode({
         "url": lp_url,
-        "teams_regex": "^G2$|^G2 Esports$",
-        "teams_regex_use_fullnames": "true",
         "ignore_tbd": "false",
         "past_match_allow_seconds": "3600",
     })
