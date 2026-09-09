@@ -2,7 +2,7 @@ name: Update G2 calendar
 
 on:
   schedule:
-    - cron: '27 * * * *'
+    - cron: '17,47 * * * *'
   workflow_dispatch:
   push:
     paths:
