@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//G2 Match Centre//Liquipedia G2 Calendar//EN
+PRODID:-//G2 Match Centre//G2 Calendar//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:G2 Esports
@@ -8,17 +8,115 @@ X-WR-TIMEZONE:Australia/Sydney
 REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:7b06e19df553ec8bdfde24ff1a0ff7a8c4bb2026@g2-calendar
-DTSTART:20260908T180000Z
-DTEND:20260908T200000Z
-SUMMARY:G2 vs Team Falcons — R6S
-DESCRIPTION:EML 2026 - Stage 2 - Playday 2\nSource: https://liquipedia.net/rainbowsix/Liquipedia:Matches
+UID:61b564c6535b1e451c92759db8db72fd4620a007@g2-calendar
+DTSTART:20260909T090000Z
+DTEND:20260909T120000Z
+SUMMARY:G2 vs BIG — CS2
+DESCRIPTION:FISSURE PLAYGROUND - Season 3 2026 - Group A\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/counter_strike/g2.ics
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs Team Falcons — R6S starts in 30 minutes
+DESCRIPTION:G2 vs BIG — CS2 starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:329d12e6b3598e3936c89608281f61be7f61e44e@g2-calendar
+DTSTART:20260914T180000Z
+DTEND:20260914T200000Z
+SUMMARY:G2 vs FNC — R6S
+DESCRIPTION:Europe MENA League - Stage 2 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:G2 vs FNC — R6S starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:52ad0a690b523dba12fb8f6528eb16609ccae66e@g2-calendar
+DTSTART:20260915T190000Z
+DTEND:20260915T210000Z
+SUMMARY:G2 vs RBLS — R6S
+DESCRIPTION:Europe MENA League - Stage 2 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:G2 vs RBLS — R6S starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:10d8f759c0eb7048ce075a237e829ee3738184e1@g2-calendar
+DTSTART:20260921T180000Z
+DTEND:20260921T200000Z
+SUMMARY:G2 vs Shifters — R6S
+DESCRIPTION:Europe MENA League - Stage 2 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:G2 vs Shifters — R6S starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ea556c6d4f9a8876e2b374653a1716899416679f@g2-calendar
+DTSTART:20260922T190000Z
+DTEND:20260922T210000Z
+SUMMARY:G2 vs Heretics — R6S
+DESCRIPTION:Europe MENA League - Stage 2 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:G2 vs Heretics — R6S starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:9e841e742dae2d1ad1546dbf694d60c0e061f2fa@g2-calendar
+DTSTART:20260928T180000Z
+DTEND:20260928T200000Z
+SUMMARY:G2 vs VP — R6S
+DESCRIPTION:Europe MENA League - Stage 2 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:G2 vs VP — R6S starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:85fe3924cf6e39cfe699b7dc07afcadd86ffda17@g2-calendar
+DTSTART:20260929T180000Z
+DTEND:20260929T200000Z
+SUMMARY:G2 vs Secret — R6S
+DESCRIPTION:Europe MENA League - Stage 2 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:G2 vs Secret — R6S starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:5e3c9410a978f9da264e6b9b45835e3151558689@g2-calendar
+DTSTART:20260930T180000Z
+DTEND:20260930T200000Z
+SUMMARY:G2 vs GE — R6S
+DESCRIPTION:Europe MENA League - Stage 2 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:G2 vs GE — R6S starts in 30 minutes
 END:VALARM
 END:VEVENT
 END:VCALENDAR
