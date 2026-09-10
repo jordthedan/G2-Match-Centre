@@ -12,7 +12,7 @@ UID:834bb111238cc74229aa4509ca35bbb6076cf47c@g2-calendar
 DTSTART:20260911T090000Z
 DTEND:20260911T120000Z
 SUMMARY:G2 vs FURIA — CS2
-DESCRIPTION:FISSURE Playground #3 - Playoffs\nSource: https://liquipedia.net/counterstrike/Liquipedia:Matches
+DESCRIPTION:FISSURE PLAYGROUND - Season 3 2026 - Playoffs\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/counter_strike/g2.ics
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
