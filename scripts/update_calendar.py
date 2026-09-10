@@ -111,6 +111,10 @@ def opponent_from_fields(summary: str, left: str, right: str) -> str:
     return m.group(1).strip() if m else "TBD"
 
 
+def unresolved_opponent(opponent: str) -> bool:
+    return opponent.strip().upper() in {"TBD", "TBA", "???", "?"}
+
+
 def is_main_g2(left: str, right: str, summary: str) -> bool:
     hay = " | ".join((left, right, summary))
     if re.search(r"\bG2[ ._-]*(?:Gozen|Ares|NORD|Hel|Oya)\b", hay, re.I):
@@ -142,13 +146,16 @@ def parse_ics_matches(game: str, text: str, source_url: str) -> list[Match]:
         start = parse_dt(prop(e, "DTSTART"))
         if not start or start < cutoff:
             continue
+        opponent = opponent_from_fields(summary, left, right)
+        if unresolved_opponent(opponent):
+            continue
         description = prop(e, "DESCRIPTION")
         competition = prop(e, "X-LIQUIPEDIATOICAL-COMPETITION")
         if not competition and description:
             competition = description.split("\n", 1)[0].strip()
         out.append(Match(
             game=game,
-            opponent=opponent_from_fields(summary, left, right),
+            opponent=opponent,
             start=start,
             competition=competition,
             url=source_url,
