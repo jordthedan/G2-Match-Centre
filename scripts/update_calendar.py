@@ -32,6 +32,12 @@ FALLBACK_ICS = {
     "CS2": "https://raw.githubusercontent.com/snutij/esport_ics/main/ics/counter_strike/g2.ics",
     "R6S": "https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics",
 }
+EXTRA_FALLBACK_ICS = {
+    # The G2-specific community feed can lag newly published Champions fixtures.
+    # VLR exposes a dynamically generated event ICS; parse it with the same local
+    # G2 filter so only main-roster G2 matches are merged into this calendar.
+    "Valorant": ["https://www.vlr.gg/event/ical/2766"],
+}
 
 @dataclass(frozen=True)
 class Match:
@@ -182,6 +188,15 @@ def fetch_game(game: str) -> tuple[list[Match], list[str]]:
     except Exception as exc:
         failed.append(fallback_url)
         print(f"WARNING {game} fallback source {fallback_url}: {exc}")
+
+    for extra_url in EXTRA_FALLBACK_ICS.get(game, []):
+        try:
+            got = parse_ics_matches(game, fetch(extra_url), extra_url)
+            print(f"{game}: {len(got)} matches from extra fallback ICS {extra_url}")
+            out.extend(got)
+        except Exception as exc:
+            failed.append(extra_url)
+            print(f"WARNING {game} extra fallback source {extra_url}: {exc}")
 
     return dedupe(out), failed
 
