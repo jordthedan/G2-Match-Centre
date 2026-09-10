@@ -26,6 +26,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Sync latest main
+        run: git pull --ff-only origin main
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
