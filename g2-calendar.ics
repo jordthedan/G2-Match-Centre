@@ -8,9 +8,9 @@ X-WR-TIMEZONE:Australia/Sydney
 REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:834bb111238cc74229aa4509ca35bbb6076cf47c@g2-calendar
-DTSTART:20260911T090000Z
-DTEND:20260911T120000Z
+UID:3aa4e876e7ef864fb9e7b8dec45725a9e48a4d56@g2-calendar
+DTSTART:20260911T091500Z
+DTEND:20260911T121500Z
 SUMMARY:G2 vs FURIA — CS2
 DESCRIPTION:FISSURE Playground #3 - Playoffs\nSource: https://liquipedia.net/counterstrike/Liquipedia:Matches
 STATUS:CONFIRMED
@@ -25,28 +25,28 @@ BEGIN:VEVENT
 UID:329d12e6b3598e3936c89608281f61be7f61e44e@g2-calendar
 DTSTART:20260914T180000Z
 DTEND:20260914T200000Z
-SUMMARY:G2 vs FNC — R6S
-DESCRIPTION:Europe MENA League - Stage 2 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
+SUMMARY:G2 vs Fnatic — R6S
+DESCRIPTION:EML 2026 - Stage 2 - Playday 3\nSource: https://liquipedia.net/rainbowsix/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs FNC — R6S starts in 30 minutes
+DESCRIPTION:G2 vs Fnatic — R6S starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:52ad0a690b523dba12fb8f6528eb16609ccae66e@g2-calendar
 DTSTART:20260915T190000Z
 DTEND:20260915T210000Z
-SUMMARY:G2 vs RBLS — R6S
-DESCRIPTION:Europe MENA League - Stage 2 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
+SUMMARY:G2 vs Rebels Gaming — R6S
+DESCRIPTION:EML 2026 - Stage 2 - Playday 4\nSource: https://liquipedia.net/rainbowsix/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs RBLS — R6S starts in 30 minutes
+DESCRIPTION:G2 vs Rebels Gaming — R6S starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
