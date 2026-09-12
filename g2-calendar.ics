@@ -11,14 +11,14 @@ BEGIN:VEVENT
 UID:8f5fc73557d9597262a379b93f77a574aa37e423@g2-calendar
 DTSTART:20260912T090000Z
 DTEND:20260912T120000Z
-SUMMARY:G2 vs BetBoom Team — CS2
-DESCRIPTION:FISSURE Playground #3 - Playoffs\nSource: https://liquipedia.net/counterstrike/Liquipedia:Matches
+SUMMARY:G2 vs BB — CS2
+DESCRIPTION:FISSURE PLAYGROUND - Season 3 2026 - Playoffs\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/counter_strike/g2.ics
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs BetBoom Team — CS2 starts in 30 minutes
+DESCRIPTION:G2 vs BB — CS2 starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
