@@ -8,20 +8,6 @@ X-WR-TIMEZONE:Australia/Sydney
 REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:10d8f759c0eb7048ce075a237e829ee3738184e1@g2-calendar
-DTSTART:20260921T180000Z
-DTEND:20260921T200000Z
-SUMMARY:G2 vs SHFT — R6S
-DESCRIPTION:Europe MENA League - Stage 2 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:G2 vs SHFT — R6S starts in 30 minutes
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:ea556c6d4f9a8876e2b374653a1716899416679f@g2-calendar
 DTSTART:20260922T190000Z
 DTEND:20260922T210000Z
@@ -40,7 +26,7 @@ UID:4800d1554bfeb30b8673676f5dd0cc0f0f7c3214@g2-calendar
 DTSTART:20260924T120000Z
 DTEND:20260924T150000Z
 SUMMARY:G2 vs TYLOO — Valorant
-DESCRIPTION:VCT - Champions 2026 - Group C\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/valorant/g2-esports.ics
+DESCRIPTION:Champions 2026 - Group C\nSource: https://liquipedia.net/valorant/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
