@@ -25,14 +25,14 @@ BEGIN:VEVENT
 UID:b60d3488f01f4f27efe638de2113502e2a7e3647@g2-calendar
 DTSTART:20260929T090000Z
 DTEND:20260929T120000Z
-SUMMARY:G2 vs Paper Rex — Valorant
-DESCRIPTION:Champions 2026 - Group C\nSource: https://liquipedia.net/valorant/Liquipedia:Matches
+SUMMARY:G2 vs PR — Valorant
+DESCRIPTION:VCT - Champions 2026 - Group C\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/valorant/g2-esports.ics
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs Paper Rex — Valorant starts in 30 minutes
+DESCRIPTION:G2 vs PR — Valorant starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
