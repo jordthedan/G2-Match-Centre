@@ -11,42 +11,42 @@ BEGIN:VEVENT
 UID:3fcb294a87c4fbb3be229ff30b0e8a521b79dc5c@g2-calendar
 DTSTART:20261003T090000Z
 DTEND:20261003T120000Z
-SUMMARY:G2 vs TL — Valorant
-DESCRIPTION:VCT - Champions 2026 - Group C\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/valorant/g2-esports.ics
+SUMMARY:G2 vs Team Liquid — Valorant
+DESCRIPTION:Champions 2026 - Group C\nSource: https://liquipedia.net/valorant/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs TL — Valorant starts in 30 minutes
+DESCRIPTION:G2 vs Team Liquid — Valorant starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cac171cd77d65444b5feb751e5a80b44a9941e90@g2-calendar
 DTSTART:20261003T163000Z
 DTEND:20261003T193000Z
-SUMMARY:G2 vs NAVI — CS2
-DESCRIPTION:ESL Pro League - Season 24 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/counter_strike/g2.ics
+SUMMARY:G2 vs Natus Vincere — CS2
+DESCRIPTION:ESL Pro League Season 24 - Round 1\nSource: https://liquipedia.net/counterstrike/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs NAVI — CS2 starts in 30 minutes
+DESCRIPTION:G2 vs Natus Vincere — CS2 starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:711847209209051922025e72f86159dc6242548e@g2-calendar
 DTSTART:20261005T190000Z
 DTEND:20261005T210000Z
-SUMMARY:G2 vs Virtus.pro — R6S
-DESCRIPTION:EML 2026 - Stage 2 - Playoffs\nSource: https://liquipedia.net/rainbowsix/Liquipedia:Matches
+SUMMARY:G2 vs VP — R6S
+DESCRIPTION:Europe MENA League - Stage 2 2026 - Playoffs\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs Virtus.pro — R6S starts in 30 minutes
+DESCRIPTION:G2 vs VP — R6S starts in 30 minutes
 END:VALARM
 END:VEVENT
 END:VCALENDAR
