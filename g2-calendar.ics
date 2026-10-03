@@ -11,14 +11,14 @@ BEGIN:VEVENT
 UID:3fcb294a87c4fbb3be229ff30b0e8a521b79dc5c@g2-calendar
 DTSTART:20261003T090000Z
 DTEND:20261003T120000Z
-SUMMARY:G2 vs TL — Valorant
-DESCRIPTION:VCT - Champions 2026 - Group C\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/valorant/g2-esports.ics
+SUMMARY:G2 vs Team Liquid — Valorant
+DESCRIPTION:Champions 2026 - Group C\nSource: https://liquipedia.net/valorant/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs TL — Valorant starts in 30 minutes
+DESCRIPTION:G2 vs Team Liquid — Valorant starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
