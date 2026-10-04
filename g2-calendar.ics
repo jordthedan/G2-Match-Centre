@@ -11,14 +11,14 @@ BEGIN:VEVENT
 UID:60bfc954b1dcfbff3c03858d547f11e63f098afb@g2-calendar
 DTSTART:20261004T140000Z
 DTEND:20261004T170000Z
-SUMMARY:G2 vs 1WIN — CS2
-DESCRIPTION:ESL Pro League - Season 24 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/counter_strike/g2.ics
+SUMMARY:G2 vs 1w Team — CS2
+DESCRIPTION:ESL Pro League Season 24 - Round 2\nSource: https://liquipedia.net/counterstrike/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs 1WIN — CS2 starts in 30 minutes
+DESCRIPTION:G2 vs 1w Team — CS2 starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -33,6 +33,20 @@ BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
 DESCRIPTION:G2 vs VP — R6S starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2c9c8cf2ab5af16f7d88d24832b944f35fbc09a4@g2-calendar
+DTSTART:20261007T090000Z
+DTEND:20261007T120000Z
+SUMMARY:G2 vs 100 Thieves — Valorant
+DESCRIPTION:https://www.vlr.gg/754730/100-thieves-vs-g2-esports-valorant-champions-2026-ubqf\nSource: https://www.vlr.gg/event/ical/2766
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:G2 vs 100 Thieves — Valorant starts in 30 minutes
 END:VALARM
 END:VEVENT
 END:VCALENDAR
