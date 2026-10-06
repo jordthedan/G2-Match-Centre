@@ -8,31 +8,17 @@ X-WR-TIMEZONE:Australia/Sydney
 REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:32194908a4b8d44f3d2197b35a6edca36e110f5e@g2-calendar
-DTSTART:20261006T120000Z
-DTEND:20261006T150000Z
-SUMMARY:G2 vs PRV — CS2
-DESCRIPTION:ESL Pro League - Season 24 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/counter_strike/g2.ics
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:G2 vs PRV — CS2 starts in 30 minutes
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:eee21442037200f8f9ab660b50b00d167156b66f@g2-calendar
 DTSTART:20261008T090000Z
 DTEND:20261008T120000Z
-SUMMARY:G2 vs 100 Thieves — Valorant
-DESCRIPTION:Champions 2026 - Playoffs\nSource: https://liquipedia.net/valorant/Liquipedia:Matches
+SUMMARY:G2 vs 100T — Valorant
+DESCRIPTION:VCT - Champions 2026 - Playoffs\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/valorant/g2-esports.ics
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs 100 Thieves — Valorant starts in 30 minutes
+DESCRIPTION:G2 vs 100T — Valorant starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
