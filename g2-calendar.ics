@@ -11,14 +11,14 @@ BEGIN:VEVENT
 UID:32194908a4b8d44f3d2197b35a6edca36e110f5e@g2-calendar
 DTSTART:20261006T120000Z
 DTEND:20261006T150000Z
-SUMMARY:G2 vs PARIVISION — CS2
-DESCRIPTION:ESL Pro League Season 24 - Round 4\nSource: https://liquipedia.net/counterstrike/Liquipedia:Matches
+SUMMARY:G2 vs PRV — CS2
+DESCRIPTION:ESL Pro League - Season 24 2026 - Group Stage\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/counter_strike/g2.ics
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs PARIVISION — CS2 starts in 30 minutes
+DESCRIPTION:G2 vs PRV — CS2 starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
