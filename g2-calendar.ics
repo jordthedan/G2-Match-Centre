@@ -11,14 +11,14 @@ BEGIN:VEVENT
 UID:60b1c9a5fc5135e1bef9706c83486256e6d04a80@g2-calendar
 DTSTART:20261010T120000Z
 DTEND:20261010T150000Z
-SUMMARY:G2 vs VIT — Valorant
-DESCRIPTION:VCT - Champions 2026 - Playoffs\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/valorant/g2-esports.ics
+SUMMARY:G2 vs Team Vitality — Valorant
+DESCRIPTION:Champions 2026 - Playoffs\nSource: https://liquipedia.net/valorant/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs VIT — Valorant starts in 30 minutes
+DESCRIPTION:G2 vs Team Vitality — Valorant starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
