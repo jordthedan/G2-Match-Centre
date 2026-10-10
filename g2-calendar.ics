@@ -8,11 +8,11 @@ X-WR-TIMEZONE:Australia/Sydney
 REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:4591474717332ab1558ac3d2cdb003fcaad36fa4@g2-calendar
-DTSTART:20261011T090000Z
-DTEND:20261011T120000Z
+UID:0bddebc1e03e4e1d04e74c06e38346942198ec8a@g2-calendar
+DTSTART:20261011T120000Z
+DTEND:20261011T150000Z
 SUMMARY:G2 vs T1 — Valorant
-DESCRIPTION:VCT - Champions 2026 - Playoffs\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/valorant/g2-esports.ics
+DESCRIPTION:Champions 2026 - Playoffs\nSource: https://liquipedia.net/valorant/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
@@ -22,31 +22,17 @@ DESCRIPTION:G2 vs T1 — Valorant starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:0bddebc1e03e4e1d04e74c06e38346942198ec8a@g2-calendar
-DTSTART:20261011T120000Z
-DTEND:20261011T150000Z
-SUMMARY:G2 vs T1 - Valorant Champions 2026 — Valorant
-DESCRIPTION:https://www.vlr.gg/754741/g2-esports-vs-t1-valorant-champions-2026-lr2\nSource: https://www.vlr.gg/event/ical/2766
-STATUS:CONFIRMED
-TRANSP:OPAQUE
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:G2 vs T1 - Valorant Champions 2026 — Valorant starts in 30 minutes
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:928e80015242a3b7918c6768a14577086f1e8776@g2-calendar
 DTSTART:20261012T160000Z
 DTEND:20261012T180000Z
-SUMMARY:G2 vs FLCS — R6S
-DESCRIPTION:Europe MENA League - Stage 2 2026 - Playoffs\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/rainbow_six_siege/g2-esports.ics
+SUMMARY:G2 vs Team Falcons — R6S
+DESCRIPTION:EML 2026 - Stage 2 - Playoffs\nSource: https://liquipedia.net/rainbowsix/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs FLCS — R6S starts in 30 minutes
+DESCRIPTION:G2 vs Team Falcons — R6S starts in 30 minutes
 END:VALARM
 END:VEVENT
 END:VCALENDAR
