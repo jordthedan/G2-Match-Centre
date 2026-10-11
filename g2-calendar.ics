@@ -12,7 +12,7 @@ UID:0bddebc1e03e4e1d04e74c06e38346942198ec8a@g2-calendar
 DTSTART:20261011T120000Z
 DTEND:20261011T150000Z
 SUMMARY:G2 vs T1 — Valorant
-DESCRIPTION:VCT - Champions 2026 - Playoffs\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/valorant/g2-esports.ics
+DESCRIPTION:Champions 2026 - Playoffs\nSource: https://liquipedia.net/valorant/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
