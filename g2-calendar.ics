@@ -11,14 +11,14 @@ BEGIN:VEVENT
 UID:663ae5e909de4d6989369a6ff2c21fb4d584934a@g2-calendar
 DTSTART:20261016T090000Z
 DTEND:20261016T120000Z
-SUMMARY:G2 vs 100 Thieves — Valorant
-DESCRIPTION:Champions 2026 - Playoffs\nSource: https://liquipedia.net/valorant/Liquipedia:Matches
+SUMMARY:G2 vs 100T — Valorant
+DESCRIPTION:VCT - Champions 2026 - Playoffs\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/valorant/g2-esports.ics
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs 100 Thieves — Valorant starts in 30 minutes
+DESCRIPTION:G2 vs 100T — Valorant starts in 30 minutes
 END:VALARM
 END:VEVENT
 END:VCALENDAR
