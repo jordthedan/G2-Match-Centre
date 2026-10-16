@@ -8,17 +8,17 @@ X-WR-TIMEZONE:Australia/Sydney
 REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
-UID:663ae5e909de4d6989369a6ff2c21fb4d584934a@g2-calendar
-DTSTART:20261016T090000Z
-DTEND:20261016T120000Z
-SUMMARY:G2 vs 100 Thieves — Valorant
-DESCRIPTION:Champions 2026 - Playoffs\nSource: https://liquipedia.net/valorant/Liquipedia:Matches
+UID:adbbd9cb8eee749b59825a6f79a22962a506b30f@g2-calendar
+DTSTART:20261024T160000Z
+DTEND:20261024T190000Z
+SUMMARY:G2 vs Natus Vincere — CS2
+DESCRIPTION:PGL Masters Bucharest 2026 - Round 1\nSource: https://liquipedia.net/counterstrike/Liquipedia:Matches
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs 100 Thieves — Valorant starts in 30 minutes
+DESCRIPTION:G2 vs Natus Vincere — CS2 starts in 30 minutes
 END:VALARM
 END:VEVENT
 END:VCALENDAR
