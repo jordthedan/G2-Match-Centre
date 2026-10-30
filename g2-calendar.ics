@@ -26,7 +26,7 @@ UID:7781952fd34cfcfd1df6df9797d270c82a9ef252@g2-calendar
 DTSTART:20261111T103000Z
 DTEND:20261111T133000Z
 SUMMARY:G2 vs MOUZ — CS2
-DESCRIPTION:BLAST Rivals Fall 2026 - Group B\nSource: https://liquipedia.net/counterstrike/Liquipedia:Matches
+DESCRIPTION:BLAST Rivals - Fall 2026 - Group B\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/counter_strike/g2.ics
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
