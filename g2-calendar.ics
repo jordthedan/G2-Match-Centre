@@ -11,14 +11,14 @@ BEGIN:VEVENT
 UID:023b070a32d48fe4e4bdacd7e364f3925382dd0a@g2-calendar
 DTSTART:20261112T093000Z
 DTEND:20261112T123000Z
-SUMMARY:G2 vs Team Spirit — CS2
-DESCRIPTION:BLAST Rivals Fall 2026 - Group B\nSource: https://liquipedia.net/counterstrike/Liquipedia:Matches
+SUMMARY:G2 vs TS — CS2
+DESCRIPTION:BLAST Rivals - Fall 2026 - Group B\nSource: https://raw.githubusercontent.com/snutij/esport_ics/main/ics/counter_strike/g2.ics
 STATUS:CONFIRMED
 TRANSP:OPAQUE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:G2 vs Team Spirit — CS2 starts in 30 minutes
+DESCRIPTION:G2 vs TS — CS2 starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
